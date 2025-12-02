@@ -661,7 +661,7 @@ h1 {
 
 /* ===== PORTO SECTION ===== */
 .porto {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/asset/img/5575128.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../asset/img/5575128.jpg);
     width: 100%;
     min-height: 100vh;
     background-size: cover;
