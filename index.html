@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="/dist/css/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></link>
+
     <link rel="shortcut icon" href="asset/icon/ChatGPT Image Nov 19, 2025, 03_01_04 PM - Copy.png" type="image/x-icon">
 </head>
 <body>
@@ -321,51 +323,137 @@
     <!-- porto end -->
 
     <!-- contact form -->
-    <section class="contact-section" id="kontak">
-      <div class="container">
+    <!-- contact form -->
+<section class="contact-section" id="kontak">
+    <div class="container">
         <div class="row mb-5">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-title mb-3">Hubungi Kami</h2>
-            <p class="section-subtitle">Punya pertanyaan atau ingin memulai konsultasi? Hubungi kami sekarang!</p>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="contact-card">
-              <form id="contactForm">
-                <div class="mb-4">
-                  <label for="fullName" class="form-label">Nama Lengkap *</label>
-                  <input type="text" class="form-control contact-input" id="fullName" placeholder="Masukkan nama lengkap Anda" required>
-                </div>
-
-                <div class="mb-4">
-                  <label for="email" class="form-label">Email *</label>
-                  <input type="email" class="form-control contact-input" id="email" placeholder="nama@email.com" required>
-                </div>
-
-                <div class="mb-4">
-                  <label for="phone" class="form-label">Nomor Telepon</label>
-                  <input type="tel" class="form-control contact-input" id="phone" placeholder="+">
-                </div>
-
-
-
-                <div class="mb-4">
-                  <label for="message" class="form-label">Pesan *</label>
-                  <textarea class="form-control contact-input" id="message" rows="5" placeholder="Ceritakan tentang bisnis Anda dan apa yang bisa kami bantu..." required></textarea>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="contact-submit-btn">Kirim Pesan</button>
-                </div>
-              </form>
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title mb-3">Hubungi Kami</h2>
+                <p class="section-subtitle">Punya pertanyaan atau ingin memulai konsultasi? Hubungi kami sekarang!</p>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <!-- contact form end -->
+
+        <div class="row justify-content-center g-5">
+            <!-- Kolom Kiri: Form -->
+            <div class="col-lg-6">
+                <div class="contact-card">
+                    <h4 class="mb-4 text-center">Kirim Pesan</h4>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="fullName" class="form-label">Nama Lengkap *</label>
+                            <input type="text" class="form-control contact-input" id="fullName" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control contact-input" id="email" placeholder="nama@email.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Nomor Telepon</label>
+                                <input type="tel" class="form-control contact-input" id="phone" placeholder="0812-3456-7890">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="subject" class="form-label">Subjek</label>
+                            <select class="form-control contact-input" id="subject">
+                                <option value="">Pilih subjek</option>
+                                <option value="konsultasi">Konsultasi Gratis</option>
+                                <option value="paket">Informasi Paket</option>
+                                <option value="kerjasama">Kerjasama</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Pesan *</label>
+                            <textarea class="form-control contact-input" id="message" rows="5" placeholder="Ceritakan tentang bisnis Anda dan apa yang bisa kami bantu..." required></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="contact-submit-btn">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Informasi & Foto -->
+            <div class="col-lg-6">
+                <div class="contact-info-card">
+                    <h4 class="mb-4 text-center">Informasi & Tim Kami</h4>
+                    
+                    <!-- Foto Tim -->
+                    <div class="team-photo-wrapper mb-4">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Tim VisiDigital" 
+                                 class="img-fluid rounded">
+                            <div class="photo-overlay">
+                                <h5>Tim Profesional VisiDigital</h5>
+                                <p>Siap membantu transformasi digital bisnis Anda</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informasi Kontak -->
+                    <div class="contact-info">
+                        <div class="info-item mb-4">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Lokasi Kantor</h6>
+                                <p class="mb-0">SMK INFORMATIKA PESAT<br>Jl. Poras No.07, RT.01/RW.04, Loji, Kota Bogor</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item mb-4">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Jam Operasional</h6>
+                                <p class="mb-0">Senin - Kamis: 06:50 - 16:10 WIB<br>Jumat: 08:00 - 12:00 WIB</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item mb-4">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Telepon & WhatsApp</h6>
+                                <p class="mb-0">+62 812 3456 7890<br>+62 812 3456 7891 (WhatsApp)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h6>Email</h6>
+                                <p class="mb-0">info@visidigital.com<br>support@visidigital.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="quick-contact mt-4">
+                        <h6 class="mb-3">Hubungi Langsung:</h6>
+                        <div class="d-flex gap-2">
+                            <a href="https://wa.me/6281380938020" class="btn btn-success flex-grow-1" target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact form end -->
 
     <!-- footer -->
     <!-- footer -->
@@ -413,7 +501,7 @@
                 <h5 class="mb-3">Lokasi Kantor</h5>
                 <p class="text-secondary mb-3">
                     SMK INFORMATIKA PESAT<br>
-                    Jl. Contoh No. 123, Kota Bogor
+                    Jl. Poras No.07, RT.01/RW.04, Loji, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16117
                 </p>
                 <div class="map mt-3">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.510547441739!2d106.76554157483226!3d-6.583275593410281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c4ff2d5ecf4b%3A0x9da488eab0064996!2sSMK%20informatika%20Pesat%20Kota%20Bogor!5e0!3m2!1sen!2sid!4v1764577053875!5m2!1sen!2sid" 
@@ -435,64 +523,76 @@
 <!-- footer end -->
     <!-- footer end -->
 
-    <!-- Popup Form Pemesanan Paket -->
+<!-- Popup Form Pemesanan Paket - FORM SAJA -->
 <div class="popup-overlay" id="packagePopup">
     <div class="popup-box package-popup">
-        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" onclick="closePackagePopup()"></button>
+        <button type="button" class="btn-close" onclick="closePackagePopup()" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
         
-        <h3 id="packageTitle" class="mb-4">Form Pemesanan Paket</h3>
+        <h3 class="popup-title">Form Pemesanan Paket</h3>
         
-        <form id="packageForm">
-            <input type="hidden" id="selectedPackage" value="">
-            <input type="hidden" id="packagePrice" value="">
-            
-            <div class="mb-3">
-                <label for="packageName" class="form-label">Nama Paket</label>
-                <input type="text" class="form-control contact-input" id="packageName" readonly>
-            </div>
-            
-            <div class="mb-3">
-                <label for="packageFullName" class="form-label">Nama Lengkap *</label>
-                <input type="text" class="form-control contact-input" id="packageFullName" placeholder="Masukkan nama lengkap" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="packageEmail" class="form-label">Email *</label>
-                <input type="email" class="form-control contact-input" id="packageEmail" placeholder="nama@email.com" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="packagePhone" class="form-label">Nomor WhatsApp *</label>
-                <input type="tel" class="form-control contact-input" id="packagePhone" placeholder="0812-3456-7890" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="packageCompany" class="form-label">Nama Perusahaan/Usaha</label>
-                <input type="text" class="form-control contact-input" id="packageCompany" placeholder="Nama perusahaan Anda">
-            </div>
-            
-            <div class="mb-4">
-                <label for="packageMessage" class="form-label">Catatan Tambahan (Opsional)</label>
-                <textarea class="form-control contact-input" id="packageMessage" rows="3" placeholder="Kebutuhan khusus atau pertanyaan..."></textarea>
-            </div>
-            
-            <div class="d-flex gap-2">
-                <button type="submit" class="contact-submit-btn flex-grow-1">Kirim Pesanan</button>
-                <button type="button" class="btn btn-outline-light" onclick="closePackagePopup()">Batal</button>
-            </div>
-        </form>
+        <!-- HAPUS SEMUA KOLOM INFO PAKET, LANGSUNG TAMPILKAN FORM -->
+        <div class="popup-form-section">
+            <form id="packageForm">
+                <input type="hidden" id="selectedPackage" value="">
+                <input type="hidden" id="packagePrice" value="">
+                
+                <!-- Tambahkan info paket kecil di atas form -->
+                <div class="package-info-mini mb-4">
+                    <h5 id="miniPackageName">Paket Starter</h5>
+                    <p class="text-muted" id="miniPackagePrice">Rp 5 Juta /bulan</p>
+                </div>
+                
+                <div class="popup-form-fields">
+                    <div class="form-group">
+                        <label for="packageFullName" class="form-label">Nama Lengkap *</label>
+                        <input type="text" class="form-control" id="packageFullName" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="packageEmail" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="packageEmail" placeholder="nama@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="packagePhone" class="form-label">WhatsApp *</label>
+                        <input type="tel" class="form-control" id="packagePhone" placeholder="0812-3456-7890" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="packageCompany" class="form-label">Perusahaan/Usaha</label>
+                        <input type="text" class="form-control" id="packageCompany" placeholder="Nama perusahaan Anda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="packageMessage" class="form-label">Catatan Tambahan</label>
+                        <textarea class="form-control" id="packageMessage" rows="3" placeholder="Kebutuhan khusus atau pertanyaan..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="popup-form-buttons">
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Kirim Pesanan</span>
+                    </button>
+                    <button type="button" class="btn-cancel" onclick="closePackagePopup()">
+                        <i class="fas fa-times"></i>
+                        <span>Batal</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Info alert kecil di bawah -->
+        <div class="package-info-alert mt-4">
+            <i class="fas fa-info-circle"></i>
+            <span>Setelah mengirim form, tim kami akan menghubungi Anda dalam 1x24 jam.</span>
+        </div>
     </div>
 </div>
 
 <!-- Popup Konfirmasi (Existing) -->
-<div class="popup-overlay" id="popup">
-    <div class="popup-box">
-        <h3 id="popup-title">Berhasil!</h3>
-        <p id="popup-message">Pesan kamu sudah terkirim.</p>
-        <button class="popup-close" onclick="closePopup()">OK</button>
-    </div>
-</div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="dist/js/script.js"></script>
 

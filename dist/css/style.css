@@ -46,6 +46,12 @@ body {
     position: relative;
 }
 
+/* NAVBAR ACTIVE STATE UNTUK SEMUA BAGIAN */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -58,53 +64,26 @@ body {
     transition: width 0.3s ease;
 }
 
+/* Garis bawah muncul saat hover atau active */
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 80%;
 }
 
-.navbar-nav .nav-link:hover,
+/* Warna saat active */
 .navbar-nav .nav-link.active {
-    color: var(--warnateks1);
+    color: var(--warnateks1) !important;
+    font-weight: 600;
 }
 
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-.scrolling-active {
-    background-color: var(--warnaprimary);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Mobile navbar fix */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background: rgba(34, 40, 49, 0.98);
-        padding: 1rem;
-        border-radius: 10px;
-        margin-top: 1rem;
-    }
-    
-    .navbar-nav .nav-link {
-        padding: 0.75rem 1rem;
-        margin: 0.25rem 0;
-    }
-    
-    .navbar-nav .nav-link::after {
-        left: 1rem;
-        transform: translateX(0);
-    }
+/* Warna saat hover */
+.navbar-nav .nav-link:hover {
+    color: var(--warnateks1) !important;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/asset/img/benjamin-child-GWe0dlVD9e0-unsplash.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/asset/img/samson-ZGjbiukp_-A-unsplash.jpg);
     width: 100%;
     min-height: 100vh;
     background-size: cover;
@@ -1096,30 +1075,187 @@ h1 {
     }
 }
 
-/* ===== PACKAGE POPUP ===== */
+/* ===== PACKAGE POPUP HORIZONTAL ===== */
+/* ===== PACKAGE POPUP - FORM SAJA ===== */
 .package-popup {
-    max-width: 500px;
-    width: 90%;
-    max-height: 90vh;
+    max-width: 500px; /* Lebih kecil karena hanya form */
+    width: 95%;
+    height: auto;
+    max-height: 85vh;
     overflow-y: auto;
     position: relative;
+    background: var(--warnaprimary);
+    color: var(--warnateks2);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 173, 181, 0.7);
 }
 
-.package-popup .btn-close {
-    filter: invert(1);
-    opacity: 0.8;
+/* Hapus layout horizontal */
+.popup-content-wrapper,
+.popup-horizontal-layout {
+    display: block; /* Ganti dari grid jadi block */
 }
 
-.package-popup .btn-close:hover {
-    opacity: 1;
+/* Info paket mini di atas form */
+.package-info-mini {
+    background: linear-gradient(135deg, rgba(0, 173, 181, 0.15), rgba(0, 173, 181, 0.05));
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 173, 181, 0.3);
 }
 
-/* Form dalam popup */
-.package-popup .form-control[readonly] {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
+.package-info-mini h5 {
+    color: var(--warnateks1);
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.package-info-mini .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.95rem;
+    margin: 5px 0 0 0;
+}
+
+/* Form section mengambil seluruh lebar */
+.popup-form-section {
+    width: 100%;
+}
+
+/* Form fields */
+.popup-form-fields {
+    margin-bottom: 25px;
+}
+
+/* Form groups */
+.popup-form-section .form-group {
+    margin-bottom: 20px;
+}
+
+.popup-form-section .form-label {
+    color: var(--warnateks2);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    display: block;
+}
+
+.popup-form-section .form-control {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--warnateks2);
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
 }
+
+.popup-form-section .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--warnateks1);
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+    outline: none;
+}
+
+.popup-form-section textarea.form-control {
+    height: 100px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Tombol popup */
+.popup-form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-form-buttons .btn-submit {
+    flex-grow: 1;
+    background: linear-gradient(135deg, var(--warnateks1), #00959c);
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.popup-form-buttons .btn-submit:hover {
+    background: linear-gradient(135deg, #00959c, var(--warnasekunder));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+}
+
+.popup-form-buttons .btn-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.popup-form-buttons .btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Info alert */
+.package-info-alert {
+    background: rgba(0, 173, 181, 0.1);
+    border: 1px solid rgba(0, 173, 181, 0.3);
+    color: var(--warnateks2);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.package-info-alert i {
+    color: var(--warnateks1);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .package-popup {
+        padding: 20px;
+        max-height: 90vh;
+    }
+    
+    .popup-form-buttons {
+        flex-direction: column;
+    }
+    
+    .popup-form-buttons .btn-submit,
+    .popup-form-buttons .btn-cancel {
+        width: 100%;
+    }
+}
+
 
 /* ===== FOOTER FIX ===== */
 .footer {
@@ -1276,5 +1412,285 @@ h1 {
     
     .package-popup {
         padding: 20px;
+    }
+}
+
+.contact-info-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    transition: all 0.4s ease;
+}
+
+.contact-info-card:hover {
+    box-shadow: 0 30px 80px rgba(0, 173, 181, 0.2);
+    transform: translateY(-5px);
+}
+
+.team-photo-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.team-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-photo:hover img {
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1.5rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.team-photo:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-overlay h5 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.photo-overlay p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Contact Info Items */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(0, 173, 181, 0.05);
+    transform: translateX(5px);
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--warnateks1), #00959c);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-content h6 {
+    color: var(--warnaprimary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.info-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Quick Contact Buttons */
+.quick-contact .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.quick-contact .btn-success {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+.quick-contact .btn-success:hover {
+    background: #1da851;
+    border-color: #1da851;
+    transform: translateY(-2px);
+}
+
+.quick-contact .btn-primary {
+    background: var(--warnateks1);
+    border-color: var(--warnateks1);
+}
+
+.quick-contact .btn-primary:hover {
+    background: #00959c;
+    border-color: #00959c;
+    transform: translateY(-2px);
+}
+
+/* Responsive Contact Layout */
+@media (max-width: 768px) {
+    .contact-card,
+    .contact-info-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .team-photo img {
+        height: 200px;
+    }
+    
+    .info-item {
+        padding: 0.75rem;
+    }
+}
+
+.contact-input[type="select"],
+.contact-input select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300ADB5' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+}
+
+.contact-input option {
+    padding: 0.5rem;
+}
+
+/* Active state indicator untuk semua bagian */
+.navbar-nav .nav-link.active {
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: var(--warnateks1);
+    border-radius: 2px;
+}
+
+/* Efek hover yang konsisten */
+.navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Transisi yang smooth */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link::after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Highlight untuk current section */
+.current-section-highlight {
+    animation: highlightPulse 2s ease-in-out;
+}
+
+@keyframes highlightPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Mobile navbar fix */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(34, 40, 49, 0.98);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        display: block;
+    }
+    
+    /* GARIS MOBILE - LEBIH PENDEK */
+    /* .navbar-nav .nav-link::after {
+        left: 1rem;
+        transform: translateX(0);
+        width: 0;
+        height: 2px;
+        bottom: 8px;
+    } */
+    
+    /* .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+        width: 30px;
+    } */
+    
+    /* Warna active di mobile */
+    .navbar-nav .nav-link.active {
+        background: rgba(0, 173, 181, 0.1);
+        border-radius: 8px;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    /* ... kode sebelumnya ... */
+    
+    /* Alternatif: garis aktif lebih tebal dan berwarna */
+    .navbar-nav .nav-link.active::before {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 1rem;
+        width: 25px;
+        height: 3px;
+        background: var(--warnateks1);
+        border-radius: 3px;
+        box-shadow: 0 0 8px rgba(0, 173, 181, 0.5);
+    }
+}
+
+@media (max-width: 991px) {
+    /* Hapus semua pseudo-elements garis */
+    .navbar-nav .nav-link::after,
+    .navbar-nav .nav-link::before,
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link:hover::before,
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link.active::before {
+        display: none !important;
+        content: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: none !important;
+        border: none !important;
     }
 }
