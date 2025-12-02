@@ -1694,3 +1694,182 @@ h1 {
         border: none !important;
     }
 }
+
+/* ===== ANIMASI FADE-IN UNTUK SEMUA SECTION (KECUALI PORTO) ===== */
+.hero, 
+.visidigital-section,
+.keunggulan-section,
+.pricing-section,
+.contact-section,
+.footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Class untuk trigger animasi */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay untuk animasi bertahap - DIPERCEPAT */
+.hero { transition-delay: 0.1s; }
+.visidigital-section { transition-delay: 0.15s; }
+.keunggulan-section { transition-delay: 0.2s; }
+.pricing-section { transition-delay: 0.25s; }
+.contact-section { transition-delay: 0.3s; }
+.footer { transition-delay: 0.35s; }
+
+/* Animasi untuk card individual - DIPERCEPAT */
+.keunggulan-card,
+.pricing-card,
+.contact-card,
+.contact-info-card {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Trigger animasi untuk card */
+.card-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Different delays for cards - DIPERCEPAT */
+.keunggulan-card:nth-child(1) { transition-delay: 0.1s; }
+.keunggulan-card:nth-child(2) { transition-delay: 0.15s; }
+.keunggulan-card:nth-child(3) { transition-delay: 0.2s; }
+.keunggulan-card:nth-child(4) { transition-delay: 0.25s; }
+.keunggulan-card:nth-child(5) { transition-delay: 0.3s; }
+.keunggulan-card:nth-child(6) { transition-delay: 0.35s; }
+
+.pricing-card:nth-child(1) { transition-delay: 0.1s; }
+.pricing-card:nth-child(2) { transition-delay: 0.15s; }
+.pricing-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* ===== ANIMASI UNTUK POPUP - DIPERCEPAT ===== */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Active state untuk overlay */
+.popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Animasi untuk semua popup - DIPERCEPAT */
+.popup-box,
+.package-popup {
+    background: #222831;
+    color: #EEEEEE;
+    padding: 30px 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,173,181,0.6);
+    transform: translateY(15px) scale(0.97);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Active state untuk popup */
+.popup-overlay.active .popup-box,
+.popup-overlay.active .package-popup {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* Pulse animation untuk popup konfirmasi - DIPERCEPAT */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px rgba(0,173,181,0.6); }
+    50% { box-shadow: 0 0 35px rgba(0,173,181,0.8); }
+    100% { box-shadow: 0 0 20px rgba(0,173,181,0.6); }
+}
+
+.popup-box.success {
+    animation: pulse-glow 1.5s ease-in-out;
+}
+
+/* ===== ANIMASI LOADING UNTUK FORM - DIPERCEPAT ===== */
+.form-submitting {
+    position: relative;
+    pointer-events: none;
+}
+
+.form-submitting::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ===== ANIMASI FLOATING UNTUK HERO - DIPERCEPAT & DIPERKECIL ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.hero h1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ===== ANIMASI UNTUK ICON KEUNGGULAN - DIPERCEPAT ===== */
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-3px) rotate(3deg); }
+}
+
+.keunggulan-icon {
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+/* Different delays untuk animasi icon - DIPERCEPAT */
+.keunggulan-card:nth-child(1) .keunggulan-icon { animation-delay: 0s; }
+.keunggulan-card:nth-child(2) .keunggulan-icon { animation-delay: 0.3s; }
+.keunggulan-card:nth-child(3) .keunggulan-icon { animation-delay: 0.6s; }
+.keunggulan-card:nth-child(4) .keunggulan-icon { animation-delay: 0.9s; }
+.keunggulan-card:nth-child(5) .keunggulan-icon { animation-delay: 1.2s; }
+.keunggulan-card:nth-child(6) .keunggulan-icon { animation-delay: 1.5s; }
+
+/* ===== TRANSITION UNTUK HOVER EFFECTS - DIPERCEPAT ===== */
+.navbar-nav .nav-link,
+.btn-hero-primary,
+.btn-hero-secondary,
+.pricing-btn,
+.learn-more-btn,
+.contact-submit-btn,
+.popup-close {
+    transition: all 0.2s ease;
+}
+
+/* Hover effects dengan scale - DIPERKECIL */
+.btn-hero-primary:hover,
+.btn-hero-secondary:hover,
+.pricing-btn:hover,
+.learn-more-btn:hover,
+.contact-submit-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+}

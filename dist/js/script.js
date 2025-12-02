@@ -362,3 +362,302 @@ function openPackagePopup(packageName, packagePrice) {
         document.getElementById("packageFullName").focus();
     }, 300);
 }
+
+// ============================================
+// ANIMASI FADE-IN SAAT SCROLL (KECUALI PORTO)
+// ============================================
+function setupScrollAnimations() {
+    // HANYA section yang perlu animasi (kecuali porto)
+    const sections = document.querySelectorAll('.hero, .visidigital-section, .keunggulan-section, .pricing-section, .contact-section, .footer');
+    const cards = document.querySelectorAll('.keunggulan-card, .pricing-card, .contact-card, .contact-info-card');
+    
+    function checkVisibility() {
+        // Animasi untuk sections
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = (rect.top <= window.innerHeight * 0.85 && rect.bottom >= 0);
+            
+            if (isVisible && !section.classList.contains('fade-in')) {
+                section.classList.add('fade-in');
+            }
+        });
+        
+        // Animasi untuk cards
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const isVisible = (rect.top <= window.innerHeight * 0.85 && rect.bottom >= 0);
+            
+            if (isVisible && !card.classList.contains('card-fade-in')) {
+                card.classList.add('card-fade-in');
+            }
+        });
+    }
+    
+    window.addEventListener('load', checkVisibility);
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Trigger awal
+    setTimeout(checkVisibility, 100);
+}
+
+// ============================================
+// POPUP KONFIRMASI (Cepat)
+// ============================================
+function showSuccessPopup(title, message) {
+    let popup = document.getElementById('successPopup');
+    
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.id = 'successPopup';
+        popup.className = 'popup-overlay';
+        popup.innerHTML = `
+            <div class="popup-box success">
+                <h3 class="popup-title mb-3">${title}</h3>
+                <p class="popup-message">${message}</p>
+                <button class="popup-close mt-3" onclick="closeSuccessPopup()">OK</button>
+            </div>
+        `;
+        document.body.appendChild(popup);
+    } else {
+        popup.querySelector('.popup-title').textContent = title;
+        popup.querySelector('.popup-message').textContent = message;
+    }
+    
+    // Tampilkan segera
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 10);
+    
+    // Auto close lebih cepat (3 detik)
+    setTimeout(() => {
+        closeSuccessPopup();
+    }, 3000);
+}
+
+function closeSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    if (popup) {
+        popup.classList.remove('active');
+        
+        setTimeout(() => {
+            if (popup.parentNode) {
+                popup.parentNode.removeChild(popup);
+            }
+        }, 200);
+    }
+}
+
+// ============================================
+// FORM HANDLER UNTUK PAKET (Lebih Cepat)
+// ============================================
+function setupPackageForm() {
+    const packageForm = document.getElementById("packageForm");
+    if (packageForm) {
+        packageForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const packageName = document.getElementById("selectedPackage").value;
+            const fullName = document.getElementById("packageFullName").value.trim();
+            const email = document.getElementById("packageEmail").value.trim();
+            
+            // Validasi cepat
+            if (!fullName || !email) {
+                showSuccessPopup("⚠️ Perhatian", "Harap isi nama lengkap dan email.");
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showSuccessPopup("⚠️ Perhatian", "Format email tidak valid.");
+                return;
+            }
+            
+            // Efek loading singkat
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Simulasi pengiriman cepat (1 detik)
+            setTimeout(() => {
+                // Reset tombol
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+                
+                // Tutup popup paket
+                closePackagePopup();
+                
+                // Tampilkan popup konfirmasi
+                setTimeout(() => {
+                    showSuccessPopup(
+                        "✅ Berhasil!",
+                        `Paket ${packageName} berhasil dipesan!\n\n` +
+                        `Tim kami akan menghubungi Anda di ${email} dalam 24 jam.`
+                    );
+                    
+                    // Reset form
+                    this.reset();
+                }, 300);
+            }, 1000);
+        });
+    }
+}
+
+// ============================================
+// FORM HANDLER UNTUK KONTAK (Lebih Cepat)
+// ============================================
+function setupContactForm() {
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            
+            // Validasi cepat
+            if (!fullName || !email || !message) {
+                showSuccessPopup("⚠️ Perhatian", "Harap isi semua field yang wajib.");
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showSuccessPopup("⚠️ Perhatian", "Format email tidak valid.");
+                return;
+            }
+            
+            // Loading singkat
+            const submitBtn = this.querySelector('.contact-submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Simulasi cepat (1 detik)
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                showSuccessPopup(
+                    "✅ Terkirim!",
+                    `Terima kasih <strong>${fullName}</strong>!\n\n` +
+                    `Pesan Anda telah dikirim.\n` +
+                    `Kami akan membalas ke <strong>${email}</strong> dalam 1-2 hari.`
+                );
+                
+                this.reset();
+            }, 1000);
+        });
+    }
+}
+
+// ============================================
+// FUNGSI BUKA/TUTUP POPUP PAKET (Cepat)
+// ============================================
+function openPackagePopup(packageName, packagePrice) {
+    // Set data
+    document.getElementById("selectedPackage").value = packageName;
+    document.getElementById("packagePrice").value = packagePrice;
+    
+    // Update info
+    document.getElementById("miniPackageName").innerText = "Paket " + packageName;
+    document.getElementById("miniPackagePrice").innerText = "Rp " + packagePrice + " /bulan";
+    
+    // Reset dan tampilkan
+    const popup = document.getElementById("packagePopup");
+    popup.classList.add("active");
+    
+    // Reset form
+    document.getElementById("packageForm").reset();
+    
+    // Fokus cepat
+    setTimeout(() => {
+        document.getElementById("packageFullName").focus();
+    }, 200);
+}
+
+function closePackagePopup() {
+    const popup = document.getElementById("packagePopup");
+    popup.classList.remove("active");
+}
+
+// ============================================
+// INISIALISASI CEPAT
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ VisiDigital loaded!');
+    
+    // Setup animasi
+    setupScrollAnimations();
+    
+    // Setup form
+    setupContactForm();
+    setupPackageForm();
+    setupEventListeners();
+    
+    // Auto show hero
+    setTimeout(() => {
+        document.querySelector('.hero')?.classList.add('fade-in');
+    }, 50);
+});
+
+// ============================================
+// EVENT LISTENERS (SIMPLE)
+// ============================================
+function setupEventListeners() {
+    // Tombol Pilih Paket
+    document.querySelectorAll('.pricing-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const card = this.closest('.pricing-card');
+            const packageName = card.querySelector('.pricing-header h3').innerText;
+            const packagePrice = card.querySelector('.amount').innerText;
+            
+            openPackagePopup(packageName, packagePrice);
+        });
+    });
+    
+    // Close buttons
+    document.querySelector('#packagePopup .btn-close')?.addEventListener('click', closePackagePopup);
+    document.querySelector('#packagePopup .btn-cancel')?.addEventListener('click', closePackagePopup);
+    
+    // Close on overlay click
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this && this.id === 'packagePopup') {
+                closePackagePopup();
+            }
+        });
+    });
+    
+    // Smooth scroll navbar
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                
+                // Update active
+                document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Scroll
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile navbar
+                    const navbarCollapse = document.querySelector('.navbar-collapse.show');
+                    if (navbarCollapse) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            }
+        });
+    });
+}
