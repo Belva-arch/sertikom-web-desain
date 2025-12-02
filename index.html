@@ -3,48 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sertikom</title>
+    <title>VisiDigital</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/dist/css/style.css">
 
+    <link rel="shortcut icon" href="asset/icon/ChatGPT Image Nov 19, 2025, 03_01_04 PM - Copy.png" type="image/x-icon">
 </head>
 <body>
     <!-- navbar -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="/asset/icon/ChatGPT Image Nov 19, 2025, 03_01_04 PM.png" width="150px" alt="">
-            </div>
-
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#portofolio">Portofolio</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-
-            <button class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">
+          <img src="/asset/icon/ChatGPT Image Nov 19, 2025, 03_01_04 PM.png" width="120" alt="VisiDigital">
+        </a>
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#keunggulan">Keunggulan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#layanan">Partner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- end navbar -->
 
-    <div class="hero-container">
-        <div class="teks-hero">
-            <div class="judul-hero">
-                <h1>Solusi Teknologi untuk Transformasi Bisnis Anda</h1>
+    <!-- hero -->
+    <div class="hero d-flex align-items-center" id="beranda">
+      <div class="container">
+        <div class="row text-light">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="fw-bold mb-4 display-4">Solusi Transformasi Digital <br>untuk Bisnis yang Siap Berkembang</h1>
+            <p class="lead mb-5 px-lg-5">VisiDigital membantu perusahaan beradaptasi di era digital melalui solusi teknologi yang strategis, terukur, dan dirancang khusus untuk kebutuhan bisnis Anda.</p>
+            
+            <div class="hero-buttons d-flex justify-content-center gap-3 flex-wrap">
+              <a href="#kontak" class="btn-hero-primary">Hubungi Kami</a>
+              <a href="#pricing" class="btn-hero-secondary">Mulai Konsultasi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end hero -->
+
+    <!-- tentang -->
+    <div class="visidigital-section" id="tentang">
+        <div class="overlap-container">
+            <div class="overlap-card">
+                <!-- Image Section -->
+                <div class="image-section">
+                    <div class="image-wrapper">
+                        <img src="/asset/img/ai-powered-device-concept.jpg" alt="VisiDigital">
+                    </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="content-section">
+                    <span class="tag">Tentang Kami</span>
+                    <h1>VisiDigital</h1>
+                    
+                    <p>
+                        VisiDigital adalah layanan konsultasi digital yang membantu bisnis dan individu membangun dan mengembangkan kehadiran online secara efektif.
+                        Kami menyediakan solusi teknologi dan strategi yang terarah—dari perencanaan, pembuatan website, optimasi konten, hingga pemasaran digital—dengan fokus pada hasil nyata dan terukur.
+                    </p>
+                    
+                    <!-- Highlighted Box -->
+                    <div class="highlight-box">
+                        <h3>Dengan VisiDigital</h3>
+                        <p>
+                            Anda tidak hanya mengikuti perkembangan zaman — Anda memimpinnya. Bersama kami, transformasi digital bukan hanya tentang teknologi, tetapi tentang menciptakan dampak yang berkelanjutan.
+                        </p>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <a href="#pricing" class="learn-more-btn">Pelajari Selengkapnya</a>
+                </div>
             </div>
         </div>
-        <div class="logo-hero">
-            <img src="/asset/img/Scenes04.svg" width="700px" alt="">
+    </div>
+    <!-- tentang end -->
+
+    <!-- keunggulan -->
+    <section class="keunggulan-section" id="keunggulan">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title mb-3">Keunggulan VisiDigital</h2>
+            <p class="section-subtitle">Mengapa memilih kami sebagai partner transformasi digital Anda?</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                ⚙️
+              </div>
+              <h3>Strategi Terukur</h3>
+              <p>Setiap langkah direncanakan dengan data dan analisis mendalam untuk memastikan hasil yang optimal.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                ✓
+              </div>
+              <h3>Tim Berpengalaman</h3>
+              <p>Didukung oleh profesional yang ahli di bidang digital marketing, web development, dan strategi bisnis.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                ⬛
+              </div>
+              <h3>Solusi Customized</h3>
+              <p>Tidak ada solusi one-size-fits-all. Setiap strategi disesuaikan dengan kebutuhan unik bisnis Anda.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                📊
+              </div>
+              <h3>Transparansi Penuh</h3>
+              <p>Laporan berkala dan komunikasi terbuka untuk memastikan Anda selalu update dengan perkembangan proyek.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                🎯
+              </div>
+              <h3>Support Berkelanjutan</h3>
+              <p>Kami tidak hanya membantu peluncuran, tapi juga mendampingi pertumbuhan jangka panjang bisnis Anda.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="keunggulan-card">
+              <div class="keunggulan-icon">
+                👥
+              </div>
+              <h3>Portofolio Terbukti</h3>
+              <p>Telah dipercaya oleh 40+ perusahaan dari berbagai industri untuk transformasi digital mereka.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- keunggulan end -->
+
+    <!-- pricing -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title mb-3">Paket Konsultasi</h2>
+            <p class="section-subtitle">Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Starter -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Starter</h3>
+                <div class="price">
+                  <span class="currency">Rp</span>
+                  <span class="amount">5 Juta</span>
+                  <span class="period">/bulan</span>
+                </div>
+              </div>
+              <div class="pricing-features">
+                <ul>
+                  <li><span class="check">✓</span> Konsultasi strategi digital dasar</li>
+                  <li><span class="check">✓</span> Analisis kompetitor</li>
+                  <li><span class="check">✓</span> Website audit</li>
+                  <li><span class="check">✓</span> Social media setup (2 platform)</li>
+                  <li><span class="check">✓</span> 2x meeting per bulan</li>
+                  <li><span class="check">✓</span> Email support</li>
+                  <li><span class="cross">✗</span> Content marketing</li>
+                  <li><span class="cross">✗</span> SEO optimization</li>
+                  <li><span class="cross">✗</span> Dedicated account manager</li>
+                </ul>
+              </div>
+              <a href="#kontak" class="pricing-btn">Pilih Paket</a>
+            </div>
+          </div>
+
+          <!-- Professional (Recommended) -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card recommended">
+              <div class="recommended-badge">Paling Populer</div>
+              <div class="pricing-header">
+                <h3>Professional</h3>
+                <div class="price">
+                  <span class="currency">Rp</span>
+                  <span class="amount">12 Juta</span>
+                  <span class="period">/bulan</span>
+                </div>
+              </div>
+              <div class="pricing-features">
+                <ul>
+                  <li><span class="check">✓</span> Semua fitur Starter</li>
+                  <li><span class="check">✓</span> Strategi digital komprehensif</li>
+                  <li><span class="check">✓</span> Content marketing plan</li>
+                  <li><span class="check">✓</span> SEO optimization</li>
+                  <li><span class="check">✓</span> Social media (4 platform)</li>
+                  <li><span class="check">✓</span> 4x meeting per bulan</li>
+                  <li><span class="check">✓</span> Priority support</li>
+                  <li><span class="check">✓</span> Monthly report & analytics</li>
+                  <li><span class="cross">✗</span> Dedicated account manager</li>
+                </ul>
+              </div>
+              <a href="#kontak" class="pricing-btn">Pilih Paket</a>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Enterprise</h3>
+                <div class="price">
+                  <span class="currency">Rp</span>
+                  <span class="amount">25 Juta</span>
+                  <span class="period">/bulan</span>
+                </div>
+              </div>
+              <div class="pricing-features">
+                <ul>
+                  <li><span class="check">✓</span> Semua fitur Professional</li>
+                  <li><span class="check">✓</span> Dedicated account manager</li>
+                  <li><span class="check">✓</span> Custom digital strategy</li>
+                  <li><span class="check">✓</span> Full-stack development support</li>
+                  <li><span class="check">✓</span> Advanced analytics & BI</li>
+                  <li><span class="check">✓</span> Unlimited meetings</li>
+                  <li><span class="check">✓</span> 24/7 priority support</li>
+                  <li><span class="check">✓</span> Quarterly business review</li>
+                  <li><span class="check">✓</span> Training & workshop</li>
+                </ul>
+              </div>
+              <a href="#kontak" class="pricing-btn">Pilih Paket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- pricing end -->
+
+    <!-- porto -->
+    <div class="porto align-items-center" id="layanan">
+      <div class="container porto-container">
+          <div class="row">
+              <div class="col my-5">
+                <div class="judul-port my-2 text-center">
+                  <h1><b>Our Partner</b></h1>
+                  <h5 class="mt-4">Melalui Kemitraan Strategis dengan Berbagai Perusahaan, VisiDigital Terus Memperluas Jangkauan dan meningkatkan Kualitas Layanan. <br>
+                  Kami Percaya, Kolaborasi yang Kuat Menciptakan Dampak yang Lebih Besar. <br><br>
+                  Berikut Adalah Partner Kami</h5>
+                </div>
+              </div>
+          </div>
+          <div class="row row-cols-lg-4 row-cols-2 text-center my-5">
+              <div class="col mb-4">
+                <img class="partner" href src="/asset/icon/ducati-logo.png" width="35%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/bmw-logo.png" width="40%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/nike-logo.png" width="45%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/honda-logo.png" width="35%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/adidas-logo.png" width="45%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/puma-logo.png" width="45%" alt="">
+              </div>
+              <div class="col mb-4">
+                <img class="partner" src="/asset/icon/newbalance-logo.png" width="45%" alt="">
+              </div>
+              <div class="col mb-4">
+                <h4><b>Dan 40+ Perusahaan Lainnya</b></h4>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- porto end -->
+
+    <!-- contact form -->
+    <section class="contact-section" id="kontak">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-title mb-3">Hubungi Kami</h2>
+            <p class="section-subtitle">Punya pertanyaan atau ingin memulai konsultasi? Hubungi kami sekarang!</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-card">
+              <form id="contactForm">
+                <div class="mb-4">
+                  <label for="fullName" class="form-label">Nama Lengkap *</label>
+                  <input type="text" class="form-control contact-input" id="fullName" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+
+                <div class="mb-4">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" class="form-control contact-input" id="email" placeholder="nama@email.com" required>
+                </div>
+
+                <div class="mb-4">
+                  <label for="phone" class="form-label">Nomor Telepon</label>
+                  <input type="tel" class="form-control contact-input" id="phone" placeholder="+">
+                </div>
+
+
+
+                <div class="mb-4">
+                  <label for="message" class="form-label">Pesan *</label>
+                  <textarea class="form-control contact-input" id="message" rows="5" placeholder="Ceritakan tentang bisnis Anda dan apa yang bisa kami bantu..." required></textarea>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="contact-submit-btn">Kirim Pesan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact form end -->
+
+    <!-- footer -->
+    <!-- footer -->
+<div class="footer">
+    <div class="container-fluid p-5 text-light">
+        <div class="row row-cols-lg-4 row-cols-1">
+            <div class="col tengah">
+                <div>
+                    <h3 class="mb-3">VisiDigital</h3>
+                    <p class="text-secondary">
+                        Partner terpercaya untuk transformasi digital bisnis Anda. 
+                        Kami menyediakan solusi teknologi dan strategi digital yang terukur untuk kesuksesan online.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col">
+                <h5 class="mb-3">Menu</h5>
+                <ul class="footer-menu">
+                    <li><a href="#beranda" class="text-secondary">Beranda</a></li>
+                    <li><a href="#tentang" class="text-secondary">Tentang</a></li>
+                    <li><a href="#keunggulan" class="text-secondary">Keunggulan</a></li>
+                    <li><a href="#pricing" class="text-secondary">Paket</a></li>
+                    <li><a href="#layanan" class="text-secondary">Partner</a></li>
+                    <li><a href="#kontak" class="text-secondary">Kontak</a></li>
+                </ul>
+            </div>
+            
+            <div class="col tengah">
+                <h5 class="mb-3">Kontak Kami</h5>
+                <ul class="contact-list">
+                    <li class="text-secondary mb-2">
+                        <i class="fas fa-envelope me-2"></i> info@visidigital.com
+                    </li>
+                    <li class="text-secondary mb-2">
+                        <i class="fas fa-phone me-2"></i> +62 812 3456 7890
+                    </li>
+                    <li class="text-secondary">
+                        <i class="fab fa-whatsapp me-2"></i> +62 812 3456 7890
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col">
+                <h5 class="mb-3">Lokasi Kantor</h5>
+                <p class="text-secondary mb-3">
+                    SMK INFORMATIKA PESAT<br>
+                    Jl. Contoh No. 123, Kota Bogor
+                </p>
+                <div class="map mt-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.510547441739!2d106.76554157483226!3d-6.583275593410281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c4ff2d5ecf4b%3A0x9da488eab0064996!2sSMK%20informatika%20Pesat%20Kota%20Bogor!5e0!3m2!1sen!2sid!4v1764577053875!5m2!1sen!2sid" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col text-center mt-5 pt-3 border-top border-secondary">
+                <p class="text-secondary mb-0">
+                    <i class="far fa-copyright me-1"></i> Copyright 2025 by Belva Alkeanno Wibowo, All Rights Reserved.
+                </p>
+            </div>
         </div>
     </div>
+</div>
+<!-- footer end -->
+    <!-- footer end -->
 
+    <!-- Popup Form Pemesanan Paket -->
+<div class="popup-overlay" id="packagePopup">
+    <div class="popup-box package-popup">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" onclick="closePackagePopup()"></button>
+        
+        <h3 id="packageTitle" class="mb-4">Form Pemesanan Paket</h3>
+        
+        <form id="packageForm">
+            <input type="hidden" id="selectedPackage" value="">
+            <input type="hidden" id="packagePrice" value="">
+            
+            <div class="mb-3">
+                <label for="packageName" class="form-label">Nama Paket</label>
+                <input type="text" class="form-control contact-input" id="packageName" readonly>
+            </div>
+            
+            <div class="mb-3">
+                <label for="packageFullName" class="form-label">Nama Lengkap *</label>
+                <input type="text" class="form-control contact-input" id="packageFullName" placeholder="Masukkan nama lengkap" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="packageEmail" class="form-label">Email *</label>
+                <input type="email" class="form-control contact-input" id="packageEmail" placeholder="nama@email.com" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="packagePhone" class="form-label">Nomor WhatsApp *</label>
+                <input type="tel" class="form-control contact-input" id="packagePhone" placeholder="0812-3456-7890" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="packageCompany" class="form-label">Nama Perusahaan/Usaha</label>
+                <input type="text" class="form-control contact-input" id="packageCompany" placeholder="Nama perusahaan Anda">
+            </div>
+            
+            <div class="mb-4">
+                <label for="packageMessage" class="form-label">Catatan Tambahan (Opsional)</label>
+                <textarea class="form-control contact-input" id="packageMessage" rows="3" placeholder="Kebutuhan khusus atau pertanyaan..."></textarea>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <button type="submit" class="contact-submit-btn flex-grow-1">Kirim Pesanan</button>
+                <button type="button" class="btn btn-outline-light" onclick="closePackagePopup()">Batal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Popup Konfirmasi (Existing) -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <h3 id="popup-title">Berhasil!</h3>
+        <p id="popup-message">Pesan kamu sudah terkirim.</p>
+        <button class="popup-close" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="dist/js/script.js"></script>
+
+
+
+    <div class="popup-overlay" id="popup">
+        <div class="popup-box">
+            <h3 id="popup-title">Berhasil!</h3>
+            <p id="popup-message">Pesan kamu sudah terkirim.</p>
+            <button class="popup-close" onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
 </body>
 </html>
