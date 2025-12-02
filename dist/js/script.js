@@ -539,9 +539,9 @@ function setupContactForm() {
                 
                 showSuccessPopup(
                     "✅ Terkirim!",
-                    `Terima kasih <strong>${fullName}</strong>!\n\n` +
+                    `Terima kasih ${fullName}!\n\n` +
                     `Pesan Anda telah dikirim.\n` +
-                    `Kami akan membalas ke <strong>${email}</strong> dalam 1-2 hari.`
+                    `Kami akan membalas ke ${email} dalam 1-2 hari.`
                 );
                 
                 this.reset();
